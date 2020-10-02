@@ -1,0 +1,59 @@
+:root {
+    /* --- Main brand colors --- */
+    --app-primary-color: #000;
+    --app-secondary-color: #2ccc76;
+
+    /* --- Main text colors --- */
+    --app-text-color: #000;
+    --app-secondary-text-color: #6f6f6f;
+
+    --app-link-color: #000;
+
+    --app-dark-text-color: var(--app-text-color);
+    --app-light-text-color: #fff;
+
+    /* --- Main background colors --- */
+    --app-primary-background-color: #fff;
+    --app-secondary-background-color: #000;
+
+    --app-box-shadow: 3px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.9);
+    --app-inset-box-shadow: inset 1px 2px 6px rgb(163, 177, 198), inset -1px -2px 6px rgba(228, 227, 227, 0.5);
+    --app-text-shadow: 0.5px 0.5px 1px var(--app-secondary-text-color);
+
+    --app-blue-gradient: linear-gradient(315deg, #3fc7ff 0%, #00a3e6 100%);
+    --app-green-gradient: linear-gradient(315deg, #68e0b6 0%, #61ddba 100%);
+    --app-rose-gradient: linear-gradient(315deg, #ec7cda 0%, #e776d4 100%);
+    --app-turquoise-gradient: linear-gradient(315deg, #44cfd8 0%, #49dbe5 100%);
+
+    --app-multi-gradient: linear-gradient(to right, #3fc7ff 0%, #00a3e6 25%, #44cfd8 75%, #61ddba 100%);
+
+    --app-placeholder-background: #eee;
+    --app-placeholder-gradient-light: #eee;
+    --app-placeholder-gradient-dark: #ddd;
+
+    --app-success-color: #61ddba;
+    --app-error-color: #c84b2c;
+}
+
+[theme="dark"] {
+    --app-primary-color: #6E9DBF;
+    --app-secondary-color: #6bf;
+    --app-text-color: #fff;
+    --app-secondary-text-color: #a3a3a3;
+    --app-primary-background-color: rgb(47, 49, 51);
+    --app-secondary-background-color: rgb(108, 156, 205);
+    --app-box-shadow: 4px 4px 5px rgba(22, 21, 21, 0.6), -1px -2px 3px rgba(90, 85, 85, 0.5);
+    --app-inset-box-shadow: inset -1px -2px 2px rgba(90, 85, 85, 0.5), inset 1px 3px 5px rgba(0, 0, 0, 0.5);
+
+    --app-blue-gradient: linear-gradient(315deg, #28779b 0%, #00619b 100%);
+    --app-green-gradient: linear-gradient(315deg, #4e9b72 0%, #4e9b7c 100%);
+    --app-rose-gradient: linear-gradient(315deg, #9b4f89 0%, #9b4e88 100%);
+    --app-turquoise-gradient: linear-gradient(315deg, #39929b 0%, #3e919b 100%);
+
+    --app-placeholder-background: #626364;
+    --app-placeholder-gradient-light: #838586;
+    --app-placeholder-gradient-dark: #626364;
+
+    --app-success-color: #4e9b7c;
+    --app-error-color: #b0432b;
+}
