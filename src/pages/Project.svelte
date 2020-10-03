@@ -19,8 +19,8 @@
         return data;
     }
 
-    onMount(()=> {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    onMount(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
     })
 
 </script>
@@ -33,15 +33,16 @@
             {#each value as project}
                 <div class="project-hero grid">
                     <div class="project-hero__content">
-                    {#if !project.projectOther}
-                        <span in:fly={{ duration: 1000, x: -50 }} class="caseStudy">Case  <br> Study</span>
-                    {/if}
+                        {#if !project.projectOther}
+                            <span in:fly={{ duration: 1000, x: -50 }} class="caseStudy">Case  <br> Study</span>
+                        {/if}
                         <h1 in:fly={{ duration: 1000, x: -40 }} class="title">{project.title}</h1>
                         <h4 in:fly={{ duration: 1000, x: -30 }} class="subtitle">{project.subtitle}</h4>
                         <p in:fly={{ duration: 1000, x: -20 }} class="description">{project.description}</p>
                     </div>
-                    <img in:fly={{ duration: 1000, x: 50 }} class="project-hero__img" loading="lazy"
-                         alt="{project.title}" src="{project.previewImg}"/>
+                    <div in:fly={{ duration: 1000, x: 50 }} class="project-hero__img"
+                         style="background-image: url('{project.previewImg}')">
+                    </div>
                 </div>
 
 
@@ -52,12 +53,12 @@
                                 in:fly={{ duration: 1000, x: -50 }}>{contentField.title}</h2>
                             {#if contentField.description}
                                 <p class="project-content__description"
-                                   in:fly={{ duration: 1000, x: 50 }}>{contentField.description}</p>
+                                   in:fly={{ duration: 1000, x: 50 }}>{@html contentField.description}</p>
                             {/if}
                             {#if contentField.image}
-                                <img class="project-content__description-img" loading="lazy"
-                                     in:fly={{ duration: 1000, x: 50 }}
-                                     alt="{contentField.title}" src="{contentField.image}"/>
+                                <div in:fly={{ duration: 1000, x: 50 }} class="project-content__description-img"
+                                     style="background-image: url('{contentField.image}')">
+                                </div>
                             {/if}
                         </div>
                     {/each}
@@ -103,12 +104,17 @@
         gap: 0;
     }
 
-    .project-hero__img, .project-content__description-img {
+    .project-hero__img {
         box-shadow: var(--app-box-shadow);
+    }
+
+    .project-hero__img, .project-content__description-img {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
         border-radius: calc(var(--app-border-radius) * 1px);
         overflow: hidden;
-        object-fit: cover;
-        height: 200px;
+        min-height: 250px;
     }
 
     @media (min-width: 992px) {
@@ -148,15 +154,17 @@
             grid-column: 6 / 13;
         }
 
-        .project-hero__img{
-            height: 300px;
-            grid-column: 7 / 13;
-        }
-
         .project-content__description-img {
             grid-column: 1 / 13;
-            height: 400px;
         }
 
+        .project-hero__img, .project-content__description-img {
+            min-height: 400px;
+        }
+    }
+    @media (min-width: 1800px) {
+        .project-hero__img, .project-content__description-img {
+            min-height: 550px;
+        }
     }
 </style>

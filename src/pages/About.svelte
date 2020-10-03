@@ -3,9 +3,13 @@
     import {fly, fade} from "svelte/transition";
     import SocialLinks from "../components/SocialLinks.svelte";
     import Ripple from "../components/Ripple.svelte";
+    import {onMount} from "svelte";
 
     let about = getData('about');
     let contact = getData('contact');
+    onMount(()=> {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
 </script>
 
 <section class="about">
@@ -15,20 +19,20 @@
             <div class="shine"></div>
         {:then value}
             <div class="about-inner grid">
-                <div in:fly={{ duration: 1000, x: -50 }} class="about-image">
-                    <img src="{value.avatarImage}" alt="{value.title}">
+                <div in:fly={{ duration: 1000, x: -50 }} class="about-image"
+                     style="background-image: url('{value.avatarImage}')">
                 </div>
                 <div in:fly={{ duration: 1000, x: 50 }} class="about-description">
                     <h1>{value.title}</h1>
                     <p>{value.description}</p>
                     {#await contact}
-                        <!-- promise is pending -->
-                            <div class="shine"></div>
+                    <!-- promise is pending -->
+                        <div class="shine"></div>
                     {:then value}
-                    <a target="_blank" rel="nofollow" href="{value.resume}" class="btn btn-primary">
-                        Resume
-                        <Ripple/>
-                    </a>
+                        <a target="_blank" rel="nofollow" href="{value.resume}" class="btn btn-primary">
+                            Resume
+                            <Ripple/>
+                        </a>
                     {:catch error}
                     <!-- promise was rejected -->
                         <p>Something went wrong: {error.message}</p>
@@ -50,8 +54,8 @@
                         <p>Something went wrong: {error.message}</p>
                     {/await}
                 </div>
-                <div in:fly={{ duration: 1000, y: -50 }} class="about-content-image">
-                    <img src="{value.contentImage}" alt="{value.title}">
+                <div in:fly={{ duration: 1000, y: -50 }} class="about-content-image"
+                     style="background-image: url('{value.contentImage}')">
                 </div>
             </div>
         {:catch error}
@@ -70,11 +74,18 @@
         margin-bottom: calc(var(--app-indent) * 2 * 1px);
     }
 
-    .shine{
+    .shine {
         height: 80vh;
     }
-    .about-image, .about-content-image{
-        max-width: 400px;
+
+    .about-image, .about-content-image {
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: var(--app-box-shadow);
+        border-radius: calc(var(--app-border-radius) * 1px);
+        min-height: 250px;
+        max-width: 600px;
     }
 
     @media (min-width: 992px) {
@@ -82,12 +93,8 @@
             padding: calc(var(--app-indent) * 3 * 1px) 0;
         }
 
-        .about-image, .about-content-image{
-            box-shadow: var(--app-box-shadow);
-            border-radius: calc(var(--app-border-radius) * 1px);
-            overflow: hidden;
-            height: 100%;
-            object-fit: cover;
+        .about-image, .about-content-image {
+            max-width: none;
         }
 
         .about-image, .about-content {

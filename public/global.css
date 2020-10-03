@@ -134,13 +134,14 @@ p {
     margin: 0 0 calc(var(--app-indent) * 1px) 0;
     font-family: var(--app-secondary-ff);
     color: var(--app-secondary-text-color);
+    line-height: 1.5;
 }
 
 li {
-    --custom-min-fz: 14;
-    --custom-max-fz: 16;
+    --custom-min-fz: 15;
+    --custom-max-fz: 18;
     font-family: var(--app-secondary-ff);
-    list-style: none;
+    line-height: 1.5;
 }
 
 span {
@@ -161,19 +162,19 @@ svg {
     color: var(--app-light-text-color);
 }
 
-.list {
-    list-style: none;
+ul {
     padding: 0;
-    gap: 0;
 }
 
-.list-item {
-    line-height: 2;
-    grid-column: 1 / 13;
+ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
 }
 
-.list-item:before {
+ul li:before {
     content: "";
+    flex: 0 0 auto;
     width: 10px;
     height: 10px;
     background-color: var(--app-secondary-color);
@@ -197,11 +198,11 @@ svg {
 }
 
 .btn {
-	display: inline-flex;
-	font-size: 16px;
+    display: inline-flex;
+    font-size: 16px;
     line-height: 1;
-	padding: calc(var(--app-indent) / 2  * 1px) calc(var(--app-indent)  * 1px);
-	color: var(--app-primary-color);
+    padding: calc(var(--app-indent) / 2 * 1px) calc(var(--app-indent) * 1px);
+    color: var(--app-primary-color);
     text-decoration: none;
     border: 1px solid var(--app-primary-color);
     position: relative;
@@ -210,7 +211,7 @@ svg {
 }
 
 .btn:hover {
-	border-color: var(--app-secondary-color);
+    border-color: var(--app-secondary-color);
     box-shadow: var(--app-box-shadow);
 }
 
@@ -224,7 +225,7 @@ svg {
     background: linear-gradient(
             120deg,
             transparent,
-			rgba(44, 204, 118, 0.3),
+            rgba(44, 204, 118, 0.3),
             transparent
     );
     transition: all .6s ease;

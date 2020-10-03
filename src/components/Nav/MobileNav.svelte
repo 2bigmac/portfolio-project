@@ -62,6 +62,10 @@
     li {
         text-align: center;
         flex: 1;
+        justify-content: center;
+    }
+    li:before {
+        display: none;
     }
 
     a {
