@@ -56,7 +56,7 @@
                                    in:fly={{ duration: 1000, x: 50 }}>{@html contentField.description}</p>
                             {/if}
                             {#if contentField.image}
-                                <div in:fly={{ duration: 1000, x: 50 }} class="project-content__description-img"
+                                <div in:fly={{ duration: 1000, x: 50 }} class:imageWide={contentField.imageWide} class="project-content__description-img"
                                      style="background-image: url('{contentField.image}')">
                                 </div>
                             {/if}
@@ -104,16 +104,10 @@
         gap: 0;
     }
 
-    .project-hero__img {
-        box-shadow: var(--app-box-shadow);
-    }
-
     .project-hero__img, .project-content__description-img {
-        background-position: center center;
-        background-size: cover;
+        background-position: left;
+        background-size: contain;
         background-repeat: no-repeat;
-        border-radius: calc(var(--app-border-radius) * 1px);
-        overflow: hidden;
         min-height: 250px;
     }
 
@@ -150,21 +144,22 @@
             grid-column: 1 / 4;
         }
 
-        .project-content__description {
+        .project-content__description, .project-content__description-img {
             grid-column: 6 / 13;
         }
 
-        .project-content__description-img {
+        .project-content__description-img.imageWide{
             grid-column: 1 / 13;
+            background-position: center;
         }
 
         .project-hero__img, .project-content__description-img {
-            min-height: 400px;
+            min-height: 500px;
         }
     }
     @media (min-width: 1800px) {
         .project-hero__img, .project-content__description-img {
-            min-height: 550px;
+            min-height: 600px;
         }
     }
 </style>

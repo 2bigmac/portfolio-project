@@ -13,7 +13,7 @@
                 .get()
                 .then(function (querySnapshot) {
                     querySnapshot.forEach(function (doc) {
-                        data = doc.data().project.filter(item => item.projectSelected);
+                        data = doc.data().project.filter(item => item.projectSelected).sort((a, b) => a.order - b.order);
                     });
                 });
         return data;

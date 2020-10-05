@@ -80,7 +80,7 @@
 
     .about-image, .about-content-image {
         background-position: bottom center;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         box-shadow: var(--app-box-shadow);
         border-radius: calc(var(--app-border-radius) * 1px);
