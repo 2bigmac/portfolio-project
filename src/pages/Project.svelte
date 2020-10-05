@@ -145,7 +145,7 @@
         }
 
         .project-content__description, .project-content__description-img {
-            grid-column: 6 / 13;
+            grid-column: 7 / 13;
         }
 
         .project-content__description-img.imageWide{

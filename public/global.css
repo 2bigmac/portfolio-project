@@ -1,75 +1,74 @@
 html,
 body {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    color: var(--app-text-color);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
-    sans-serif;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background: var(--app-primary-background-color);
+  color: var(--app-text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--app-primary-background-color);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-    transition: var(--app-transition);
+  color: inherit;
+  text-decoration: none;
+  transition: var(--app-transition);
 }
 
 a:focus {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 a:hover {
-    text-decoration: none;
-    color: var(--app-secondary-color);
+  text-decoration: none;
+  color: var(--app-secondary-color);
 }
 
-
 :root {
-    --app-indent: 15;
-    --app-border-radius: 5;
-    --app-transition: all .2s ease;
+  --app-indent: 15;
+  --app-border-radius: 5;
+  --app-transition: all 0.2s ease;
 }
 
 /* ---/// App grid ///--- */
 
 /* --- App grid styles --- */
 .grid {
-    --grid-columns: 1;
-    --grid-gap: calc(var(--app-indent) * 2 * 1px) 0;
-    display: grid;
-    grid-template-columns: repeat(var(--grid-columns), 1fr);
-    gap: var(--grid-gap);
+  --grid-columns: 1;
+  --grid-gap: calc(var(--app-indent) * 2 * 1px) 0;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
 }
 
 .wrapper {
-    --wrapper-horizontal-indent: 10px;
-    position: relative;
-    padding-left: var(--wrapper-horizontal-indent);
-    padding-right: var(--wrapper-horizontal-indent);
+  --wrapper-horizontal-indent: 10px;
+  position: relative;
+  padding-left: var(--wrapper-horizontal-indent);
+  padding-right: var(--wrapper-horizontal-indent);
 }
 
 /* ---/// App typography ///--- */
 :root {
-    --app-primary-ff: "Montserrat", sans-serif;
-    --app-secondary-ff: "Manrope", sans-serif;
+  --app-primary-ff: "Montserrat", sans-serif;
+  --app-secondary-ff: "Manrope", sans-serif;
 }
 
 h1,
@@ -84,203 +83,211 @@ button,
 input,
 textarea,
 a {
-    /* --- App fluid font-size (without px) --- */
-    --min-fz: var(--custom-min-fz, 14);
-    --max-fz: var(--custom-max-fz, 16);
-    --min-view: 320;
-    --max-view: 2000;
-    --fz: calc(
-            var(--min-fz) * 1px + (var(--max-fz) - var(--min-fz)) *
-            ((100vw - var(--min-view) * 1px) / (var(--max-view) - var(--min-view)))
-    );
-    font-size: var(--fz);
-    font-family: var(--app-secondary-ff);
-    position: relative;
+  /* --- App fluid font-size (without px) --- */
+  --min-fz: var(--custom-min-fz, 14);
+  --max-fz: var(--custom-max-fz, 16);
+  --min-view: 320;
+  --max-view: 2000;
+  --fz: calc(
+    var(--min-fz) * 1px + (var(--max-fz) - var(--min-fz)) *
+      ((100vw - var(--min-view) * 1px) / (var(--max-view) - var(--min-view)))
+  );
+  font-size: var(--fz);
+  font-family: var(--app-secondary-ff);
+  position: relative;
 }
 
 h1 {
-    --custom-min-fz: 28;
-    --custom-max-fz: 48;
-    margin: 0 0 calc(var(--app-indent) * 1px) 0;
-    font-family: var(--app-primary-ff);
-    position: relative;
+  --custom-min-fz: 28;
+  --custom-max-fz: 48;
+  margin: 0 0 calc(var(--app-indent) * 1px) 0;
+  font-family: var(--app-primary-ff);
+  position: relative;
 }
 
 h2 {
-    --custom-min-fz: 23;
-    --custom-max-fz: 40;
-    margin: 0 0 calc(var(--app-indent) * 1px) 0;
-    font-family: var(--app-primary-ff);
-    position: relative;
+  --custom-min-fz: 23;
+  --custom-max-fz: 40;
+  margin: 0 0 calc(var(--app-indent) * 1px) 0;
+  font-family: var(--app-primary-ff);
+  position: relative;
 }
 
 h3 {
-    --custom-min-fz: 20;
-    --custom-max-fz: 30;
-    margin: 0 0 0.5em 0;
-    font-family: var(--app-primary-ff);
+  --custom-min-fz: 20;
+  --custom-max-fz: 30;
+  margin: 0 0 0.5em 0;
+  font-family: var(--app-primary-ff);
 }
 
 h4 {
-    --custom-min-fz: 18;
-    --custom-max-fz: 30;
-    margin: 0 0 0.5em 0;
-    font-family: var(--app-primary-ff);
+  --custom-min-fz: 18;
+  --custom-max-fz: 30;
+  margin: 0 0 0.5em 0;
+  font-family: var(--app-primary-ff);
 }
 
 p {
-    --custom-min-fz: 15;
-    --custom-max-fz: 18;
-    margin: 0 0 calc(var(--app-indent) * 1px) 0;
-    font-family: var(--app-secondary-ff);
-    color: var(--app-secondary-text-color);
-    line-height: 1.5;
+  --custom-min-fz: 15;
+  --custom-max-fz: 18;
+  margin: 0 0 calc(var(--app-indent) * 1px) 0;
+  font-family: var(--app-secondary-ff);
+  color: var(--app-secondary-text-color);
+  line-height: 1.5;
 }
 
 li {
-    --custom-min-fz: 15;
-    --custom-max-fz: 18;
-    font-family: var(--app-secondary-ff);
-    line-height: 1.5;
+  --custom-min-fz: 15;
+  --custom-max-fz: 18;
+  font-family: var(--app-secondary-ff);
+  line-height: 1.5;
 }
 
 span {
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
 }
 
 img,
 svg {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .light-color {
-    color: var(--app-light-text-color);
+  color: var(--app-light-text-color);
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }
 
 ul li {
-    display: flex;
-    align-items: center;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
 ul li:before {
-    content: "";
-    flex: 0 0 auto;
-    width: 10px;
-    height: 10px;
-    background-color: var(--app-secondary-color);
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-    border-radius: 50%;
-    box-shadow: var(--app-inset-box-shadow);
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  background-color: var(--app-secondary-color);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;
+  box-shadow: var(--app-inset-box-shadow);
 }
 
 .fp-pagetitle {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-    clip-path: inset(0px 0px 99.9% 99.9%);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    padding: 0;
-    border: 0;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
 }
 
 .btn {
-    display: inline-flex;
-    font-size: 16px;
-    line-height: 1;
-    padding: calc(var(--app-indent) / 2 * 1px) calc(var(--app-indent) * 1px);
-    color: var(--app-primary-color);
-    text-decoration: none;
-    border: 1px solid var(--app-primary-color);
-    position: relative;
-    overflow: hidden;
-    transition: all .2s ease;
+  display: inline-flex;
+  font-size: 16px;
+  line-height: 1;
+  padding: calc(var(--app-indent) / 2 * 1px) calc(var(--app-indent) * 1px);
+  color: var(--app-primary-color);
+  text-decoration: none;
+  border: 1px solid var(--app-primary-color);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
-    border-color: var(--app-secondary-color);
-    box-shadow: var(--app-box-shadow);
+  border-color: var(--app-secondary-color);
+  box-shadow: var(--app-box-shadow);
 }
 
 .btn:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-            120deg,
-            transparent,
-            rgba(44, 204, 118, 0.3),
-            transparent
-    );
-    transition: all .6s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(44, 204, 118, 0.3),
+    transparent
+  );
+  transition: all 0.6s ease;
 }
 
 .btn:hover:before {
-    left: 100%;
+  left: 100%;
 }
 
-
 .shine {
-    background: #f6f7f8;
-    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: inline-block;
-    position: relative;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  position: relative;
 
-    -webkit-animation-duration: 1s;
-    -webkit-animation-fill-mode: forwards;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: placeholderShimmer;
-    -webkit-animation-timing-function: linear;
-    width: 100%;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+  width: 100%;
 }
 
 @-webkit-keyframes placeholderShimmer {
-    0% {
-        background-position: -468px 0;
-    }
+  0% {
+    background-position: -468px 0;
+  }
 
-    100% {
-        background-position: 468px 0;
-    }
+  100% {
+    background-position: 468px 0;
+  }
 }
 
-
 @media (min-width: 992px) {
-    :root {
-        --app-indent: 25;
-    }
+  :root {
+    --app-indent: 25;
+  }
 
-    .grid {
-        --grid-columns: 12;
-        --grid-gap: calc(var(--app-indent) * 1px);
-    }
+  .grid {
+    --grid-columns: 12;
+    --grid-gap: calc(var(--app-indent) * 1px);
+  }
 
-    .wrapper {
-        margin: 0 calc(var(--app-indent) * 1px);
-        --wrapper-horizontal-indent: calc(49.9% - 650px); /* --- App wrapper 1300px --- */
-    }
+  .wrapper {
+    margin: 0 calc(var(--app-indent) * 1px);
+    --wrapper-horizontal-indent: calc(
+      49.9% - 650px
+    ); /* --- App wrapper 1300px --- */
+  }
 }
 
 @media (min-width: 1800px) {
-    .wrapper {
-        --wrapper-horizontal-indent: calc(49.9% - 900px); /* --- App wrapper 2000px --- */
-    }
+  .wrapper {
+    --wrapper-horizontal-indent: calc(
+      49.9% - 900px
+    ); /* --- App wrapper 2000px --- */
+  }
 }
