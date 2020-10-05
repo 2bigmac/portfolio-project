@@ -62,6 +62,12 @@
         height: 235px;
     }
 
+    @media (min-width: 768px) {
+        .hero-inner {
+            grid-column: 1 / 10;
+        }
+    }
+
     @media (min-width: 992px) {
         .links-shine {
             grid-column: 1 / 3;
@@ -77,5 +83,17 @@
         .hero {
             padding: calc(var(--app-indent) * 3 * 1px) 0;
         }
+    
     }
+
+  
+
+     @media (min-width: 1800px) {
+
+         .hero-inner {
+            grid-column: 1 / 8;
+        }
+    }
+
+    	
 </style>

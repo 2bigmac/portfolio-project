@@ -23,7 +23,7 @@
 </script>
 
 <section class="selected">
-    <h2>Selected Works</h2>
+    <h2 class="selected-title">Selected Works</h2>
     {#await getSelected()}
     <!-- promise is pending -->
         <div class="shine"></div>
@@ -63,6 +63,10 @@
     .selected {
         margin: calc(var(--app-indent) * 2 * 1px) 0;
         padding: calc(var(--app-indent) * 1px) 0;
+    }
+
+    .selected-title{
+        margin: 0 0 calc(var(--app-indent) * 4 * 1px) 0;
     }
 
     .selected-inner {
@@ -107,7 +111,7 @@
     @media (min-width: 992px) {
 
         .selected-item__content {
-            grid-column: 1 / 8;
+            grid-column: 1 / 6;
         }
 
         .selected-item__img {
