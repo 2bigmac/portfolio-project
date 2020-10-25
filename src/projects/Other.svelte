@@ -2,6 +2,7 @@
     import {db} from "../firebase/firebase";
     import {link} from "svelte-routing";
     import {fly} from "svelte/transition";
+    import Ripple from "../components/Ripple.svelte";
 
 
     const getOther = async () => {
@@ -34,6 +35,7 @@
                 <a href={`/project/${other.uniqueKey}`} use:link class="otherProjects-img"
                    in:fly={{ duration: 1000, delay: (index + 1) * 200, x: -100 }}>
                     <img loading="lazy" src="{other.previewImg}" alt="{other.title}">
+                    <Ripple/>
                 </a>
 
             {/each}

@@ -47,6 +47,7 @@
                     </div>
                     <a href={`/project/${selected.uniqueKey}`} use:link class="selected-item__img">
                         <img loading="lazy"  src="{selected.previewImg}" alt="{selected.title}">
+                        <Ripple/>
                     </a>
 
                 </article>

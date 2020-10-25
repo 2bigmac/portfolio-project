@@ -89,6 +89,7 @@
         position: absolute;
         padding: calc(var(--app-indent) * 1px);
         color: var(--app-light-text-color);
+        border-radius: calc(var(--app-border-radius) * 1px);
         top: 0;
         right: 0;
         left: 0;
@@ -97,10 +98,6 @@
         opacity: 0;
         margin: 0;
         transition: opacity .2s ease-out;
-    }
-
-    .otherProjects-overlayText * {
-        color: var(--app-light-text-color);
     }
 
     .otherProjects-img:hover .otherProjects-overlayText {
