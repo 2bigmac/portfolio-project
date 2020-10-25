@@ -10,7 +10,7 @@
 {:then value}
     <div class="social-links">
         {#each value.links as link, index}
-            <a aria-label="socialLink" in:fly={{ duration: 1000, delay: (index + 1) * 150, y: -50 }} href="{link.link}"
+            <a  target="_blank" aria-label="socialLink" in:fly={{ duration: 1000, delay: (index + 1) * 150, y: -50 }} href="{link.link}"
                class="social-link">{@html link.linkIcon}</a>
         {/each}
     </div>

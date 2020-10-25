@@ -83,10 +83,10 @@
         .hero {
             padding: calc(var(--app-indent) * 3 * 1px) 0;
         }
-    
+
     }
 
-  
+
 
      @media (min-width: 1800px) {
 
@@ -95,5 +95,5 @@
         }
     }
 
-    	
+
 </style>

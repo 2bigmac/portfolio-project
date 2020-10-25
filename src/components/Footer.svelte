@@ -75,6 +75,7 @@
 
     .footer-content p{
         color: var(--app-light-text-color);
+        max-width: 30%;
     }
 
     @media (min-width: 992px) {

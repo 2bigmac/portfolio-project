@@ -2,6 +2,7 @@
     import {db} from "../firebase/firebase";
     import {link} from "svelte-routing";
     import {fly} from "svelte/transition";
+    import Ripple from "../components/Ripple.svelte";
 
 
     const getOther = async () => {
@@ -36,6 +37,11 @@
                    rel=”noreferrer”
                    use:link class="otherProjects-img">
                     <img loading="lazy" src="{other.previewImg}" alt="{other.title}">
+
+                    {#if other.overlayText}
+                        <p class="otherProjects-overlayText">{@html other.overlayText}</p>
+                    {/if}
+                    <Ripple/>
                 </a>
             {/each}
         </div>
@@ -62,6 +68,8 @@
         overflow: hidden;
         box-shadow: var(--app-box-shadow);
         transition: all .2s ease;
+        will-change: transform;
+        position: relative;
     }
 
     .shine {
@@ -71,6 +79,36 @@
 
     .otherProjects-img:hover {
         transform: scale(1.025);
+    }
+
+    .otherProjects-overlayText {
+        --custom-min-fz: 20;
+        --custom-max-fz: 35;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        padding: calc(var(--app-indent) * 1px);
+        color: var(--app-light-text-color);
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        margin: 0;
+        transition: opacity .2s ease-out;
+    }
+
+    .otherProjects-overlayText * {
+        color: var(--app-light-text-color);
+    }
+
+    .otherProjects-img:hover .otherProjects-overlayText {
+        opacity: 1;
+    }
+
+    .otherProjects-overlayText:before {
+
     }
 
     @media (min-width: 992px) {
