@@ -54,9 +54,6 @@
                         <p>Something went wrong: {error.message}</p>
                     {/await}
                 </div>
-                <div in:fly={{ duration: 1000, y: -50 }} class="about-content-image"
-                     style="background-image: url('{value.contentImage}')">
-                </div>
             </div>
         {:catch error}
         <!-- promise was rejected -->
@@ -78,7 +75,7 @@
         height: 80vh;
     }
 
-    .about-image, .about-content-image {
+    .about-image {
         background-position: bottom center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -93,20 +90,19 @@
             padding: calc(var(--app-indent) * 3 * 1px) 0;
         }
 
-        .about-image, .about-content-image {
-            max-width: none;
-        }
-
-        .about-image, .about-content {
+        .about-image {
             grid-column: 1 / 6;
+            max-width: none;
+            min-height: 500px;
         }
 
-        .about-description, .about-content-image {
+        .about-description {
             grid-column: 7 / 13;
         }
 
-        .about-content, .about-content-image {
+        .about-content {
             grid-row: 2;
+            grid-column: 1 / 6;
         }
 
         .about-inner {

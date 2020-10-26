@@ -16,7 +16,6 @@
                         data = doc.data().project.filter(item => item.projectOther).sort((a, b) => a.order - b.order);
                     });
                 });
-        console.log(data)
         return data;
 
     }
